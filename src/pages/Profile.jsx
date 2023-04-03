@@ -111,7 +111,7 @@ function Profile() {
         
         // Function to fetch and store the users's favorites, is also passed as a prop elsewhere
         const handleFavoriteFetch = async () => {
-         await fetch(`/api/Favorites/${profileId}`, {
+         await fetch(`https://starweatherapi.azurewebsites.net/api/Favorites/${profileId}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

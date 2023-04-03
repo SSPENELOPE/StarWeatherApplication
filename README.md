@@ -1,8 +1,10 @@
 # StarWeatherApplication
 
-## What this is...
+## What this is
 
 - This is the front end of my "react-weatherapp". It is being separated from the ASP.NET api used to handle all backend request. This should help packing it with electron.js easier as there is not much documentation on how to package a single solution program with C# and react. 
+
+- This will be the packaged version of electron
 
 # Installation
 

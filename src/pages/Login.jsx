@@ -24,7 +24,7 @@ function Login() {
             password: formState.password
         }
 
-        const response = await fetch("/auth/Login", {
+        const response = await fetch("https://starweatherapi.azurewebsites.net/auth/Login", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -60,7 +60,7 @@ function CurrentWeather(props) {
             setFavorite(solidStar); // Update the star to solid
           
             // Make the fetch request
-            const res = await fetch('/api/Favorites', {
+            const res = await fetch('https://starweatherapi.azurewebsites.net/api/Favorites', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

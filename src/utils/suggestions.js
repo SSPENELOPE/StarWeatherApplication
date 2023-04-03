@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 class SuggestionSettings {
     async getSuggestionSettings(profileId) {
 
-            await fetch(`/api/Edit/GetSuggestion/${profileId}`, {
+            await fetch(`https://starweatherapi.azurewebsites.net/api/Edit/GetSuggestion/${profileId}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ class SuggestionSettings {
             UserId: profileId,
             suggestionSetting: suggestionType
         }
-        await fetch('/api/Edit/SetSuggestion', {
+        await fetch('https://starweatherapi.azurewebsites.net/api/Edit/SetSuggestion', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

@@ -52,7 +52,6 @@ function ProfileHeader(props) {
   // Memoize the fetchSuggestions function
   const fetchSuggestions = useMemo(() => async () => {
     setIsLoading(true);
-    console.log('Fetching suggestions...');
     const data = await loadSuggestions.getCachedCitySuggestions();
     const filteredSuggestions = data.filter((suggestion) => suggestion.name.toUpperCase().startsWith(city.toUpperCase()));
     setCitySuggestions(filteredSuggestions);

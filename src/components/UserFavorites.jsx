@@ -20,7 +20,7 @@ function UserFavorties(props) {
         const favItemId = `fav-item-${favId}`;
       
         const favItem = document.getElementById(favItemId);
-        await fetch(`/api/Favorites/${favId}`, {
+        await fetch(`https://starweatherapi.azurewebsites.net/api/Favorites/${favId}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json',

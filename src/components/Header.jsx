@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
 import loadcities from "../utils/loadcities";
 import loadSuggestions from "../utils/loadSuggestions";
-import { toast } from "react-toastify";
 const DEBOUNCE_DELAY = 300;
 
 
@@ -59,7 +58,6 @@ function Header(props) {
   // Memoize the fetchSuggestions function
   const fetchSuggestions = useMemo(() => async () => {
     setIsLoading(true);
-    console.log('Fetching suggestions...');
     const data = await loadSuggestions.getCachedCitySuggestions();
     const filteredSuggestions = data.filter((suggestion) => suggestion.name.toUpperCase().startsWith(city.toUpperCase()));
     setCitySuggestions(filteredSuggestions);

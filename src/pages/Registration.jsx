@@ -37,7 +37,7 @@ function Registration() {
 
     // We will use this to ensure the user does not have an account already or the username is not taken to remove duplications
     const checkIfExist = async (data) => {
-        const response = await fetch('/auth/Authenticate', {
+        const response = await fetch('https://starweatherapi.azurewebsites.net/auth/Authenticate', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ function Registration() {
 
     const handleRegistration = async (data) => {
 
-        const response = await fetch("/auth/Registration", {
+        const response = await fetch("https://starweatherapi.azurewebsites.net/auth/Registration", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
