@@ -14,7 +14,7 @@ function ProfileEditor(props) {
     /*** Function to relog the user after the changes have been made ***/
     const relog = async (relogData) => {
 
-        const response = await fetch("starweatherapi.azurewebsites.net/auth/Prelogged", {
+        const response = await fetch("https://starweatherapi.azurewebsites.net/auth/Prelogged", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ function ProfileEditor(props) {
                 UserId: profile.userId
             };
 
-            const response = await fetch("starweatherapi.azurewebsites.net/api/Edit/UpdateEmail", {
+            const response = await fetch("https://starweatherapi.azurewebsites.net/api/Edit/UpdateEmail", {
                 method: "PUT",
                 headers: {
                     'Content-Type': 'application/json'
@@ -109,7 +109,7 @@ function ProfileEditor(props) {
                 UserId: profile.userId
             };
 
-            const response = await fetch("starweatherapi.azurewebsites.net/api/Edit/UpdateUsername", {
+            const response = await fetch("https://starweatherapi.azurewebsites.net/api/Edit/UpdateUsername", {
                 method: "PUT",
                 headers: {
                     'Content-Type': 'application/json'
@@ -179,7 +179,7 @@ function ProfileEditor(props) {
         };
       
         try {
-          const response = await fetch("starweatherapi.azurewebsites.net/api/Edit/UpdatePassword", {
+          const response = await fetch("https://starweatherapi.azurewebsites.net/api/Edit/UpdatePassword", {
             method: "PUT",
             headers: {
               "Content-Type": "application/json"
