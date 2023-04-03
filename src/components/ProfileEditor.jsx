@@ -158,8 +158,14 @@ function ProfileEditor(props) {
     const [passwordsMatch, setPasswordsMatch] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
     const togglePasswordVisibility = () => setShowPassword(!showPassword);
-
+    const [passwordError, setPasswordError] = useState("");
     const [passwords, setPasswords] = useState({ currentPw: '', newPw1: '', newPw2: '' });
+
+    /* Password validation for new password */
+    const validatePassword = (password) => {
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        return passwordRegex.test(password);
+    };
 
     /** Handlers for updating state when input is modified **/
     const handlePasswordInputChange = (event) => {
@@ -168,7 +174,20 @@ function ProfileEditor(props) {
             ...passwords,
             [name]: value,
         });
+        if (name === "newPw1") {
+            handlePassworValidation(event);
+        }
     };
+
+    const handlePassworValidation = (event) => {
+        if (event.target.name === "newPw1") {
+            if (!validatePassword(event.target.value)) {
+                setPasswordError("Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character");
+            } else {
+                setPasswordError("");
+            }
+        }
+    }
 
     /* If current password is correct, we will update the users password here */
     const handlePasswordUpdate = async () => {
@@ -423,6 +442,7 @@ function ProfileEditor(props) {
                                     >Cancel
                                     </button>
                                 </div>
+                                {passwordError && <div className="text-light">{passwordError}</div>}
                             </form>
                         )}
                     </div>
