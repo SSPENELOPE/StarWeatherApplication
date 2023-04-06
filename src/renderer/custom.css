@@ -1,0 +1,918 @@
+/* Provide sufficient contrast against white background */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+ :root {
+  --primary: #17dcff;
+  --textshadow: .1vw 0vw .25vw #1e91f0, .2vw 0vw .25vw #1e3df0;
+  --boxshadow: 0 0 10px 0.4px #17dcff,
+  0 0 40px 0.6px #1e91f0,
+  0 0 20px 0.4px #1e3df0,
+  inset 0 0 1.5px 0.4px #1e3df0,
+  inset 0 0 0.4px 0.2px #1e91f0,
+  inset 0 0 0.5px 0.2px #17dcff;
+ }
+
+ .fixthis {
+  border: 4px solid limegreen;
+ }
+
+a {
+  color: var(--primary);
+  text-shadow: var(--textshadow);
+}
+
+code {
+  color: #E01A76;
+}
+
+.cities-list {
+  font-weight: 600;
+  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.cities {
+  border: none;
+  font-weight: 600;
+}
+
+.cities:hover {
+  color: #fff;
+}
+
+.font {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--primary);
+  text-shadow: var(--textshadow);
+}
+
+.cust-btn {
+  background-color: var(--primary);
+  color: #fff;
+  text-shadow: var(--textshadow);
+}
+
+.cust-btn:hover {
+  color: #fff;
+  box-shadow: var(--boxshadow);
+}
+
+.showBtn {
+  display: flex;
+}
+
+.hideBtn {
+  display: none;
+}
+
+/* Background Video */
+.video-1 {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -9999;
+}
+
+/************* Header **************/
+.custom-header {
+  background-image: linear-gradient(rgba(104, 102, 236, 0.3) 0%,
+          rgba(102, 176, 236, 0.6) 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.listDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.clearBtn {
+  align-self: self-start;
+  font-size: 12px;
+}
+
+
+/**************** Current Weather ***************/
+.currentWrapper {
+ /*  border: 3px solid var(--primary); */
+  box-shadow: var(--boxshadow);
+  min-height: 40vh;
+  max-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2em;
+  padding: 3em;
+}
+
+.current {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.currentBox,
+.hourlyBox {
+  width:40%;
+  margin: 5px;
+}
+
+.currentWrapper h1 {
+  color: var(--primary);
+  text-shadow: var(--textshadow);
+}
+
+.currentWrapper ul li {
+  color: var(--primary);
+  text-shadow: var(--textshadow);
+}
+
+.data {
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.data-list {
+  list-style: none;
+}
+
+.table-cell {
+  padding: 10px 10px;
+}
+
+.table-rows {
+  border-top: 3px double yellow;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tbody{
+  width: 70%;
+}
+
+.checkmark {
+  display: inline-block;
+  position: relative;
+  width: 56px;
+  height: 56px;
+}
+
+.checkmark__circle {
+  box-sizing: border-box;
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  border: 3px solid #4CAF50;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.checkmark__check {
+  box-sizing: border-box;
+  height: 22px;
+  width: 34px;
+  border-bottom: 3px solid #4CAF50;
+  border-right: 3px solid #4CAF50;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 13px;
+  left: 10px;
+  animation: checkmark 0.5s ease-in-out;
+}
+
+@keyframes checkmark {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(45deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+
+
+/********************       5 day forcast      ************************/
+
+.fiveDayWrapper {
+ /*  border: 3px solid var(--primary); */
+ box-shadow: var(--boxshadow);
+ min-height: 40vh;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ margin: 2em;
+ padding: 3em;
+}
+
+.fiveDayWrapper .card ul li:first-child {
+  font-size: 2rem;
+  background-color: gray;
+  text-decoration: underline;
+}
+
+.forecast {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.neon-row {
+  box-shadow:
+      0 0 0.1px 0.4px #17dcff,
+      0 0 0.4px 0.6px #1e91f0,
+      0 0 4px 0.4px #1e3df0,
+      inset 0 0 1.5px 0.4px #1e3df0,
+      inset 0 0 0.4px 0.2px #1e91f0,
+      inset 0 0 0.5px 0.2px #17dcff;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.neon-card {
+  box-shadow: var(--boxshadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* margin: 2em; */
+  flex-basis: calc(100% / 4 - 2em);
+  max-width: 25%;
+  min-height: 30vh;
+}
+
+.neon {
+  text-align: center;
+  color: #17dcff;
+  font-size: 25px;
+  text-shadow:
+      .1vw 0vw .25vw #1e91f0, .2vw 0vw .25vw #1e3df0;
+}
+
+
+/*************  Registration Page  *************/
+.regDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.regForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50vw;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: var(--boxshadow);
+}
+
+.regForm label {
+  color: var(--primary);
+  text-shadow: var(--textshadow);
+  font-weight: bolder;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.regForm input {
+  max-width: 80%;
+  padding: 10px;
+}
+
+.regBtn {
+  background-color: var(--primary);
+  color: #fff;
+  text-shadow: var(--textshadow);
+}
+
+.regBtn:hover {
+  color: #fff;
+  box-shadow: var(--boxshadow);
+}
+
+/********************   Profile Page      ********************/
+.custom-border {
+  padding: 3px;
+  border-bottom: 5px double yellow;
+  background-image: linear-gradient(rgba(104, 102, 236, 0.3) 0%,
+  rgba(102, 176, 236, 0.6) 100%);
+}
+
+.search-container {
+  position: relative;
+}
+
+.suggestions-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 1000;
+}
+
+.suggestions-container-notLogged {
+  display: inline-block;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 1;
+  margin-top: 5px;
+}
+
+.suggestions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.suggestions li {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.suggestions li:hover {
+  background-color: #f2f2f2;
+}
+
+
+
+/*************** CityList Component ****************/
+.offCanvasSearched {
+  display: flex;
+  flex-direction: column;
+}
+
+.offCanvasButton {
+  color: white;
+  border: none;
+  background-color: transparent;
+  transition: transform 0.2s ease-in-out;
+}
+
+.offCanvasButton:hover {
+  text-shadow: var(--textshadow);
+  color: var(--primary);
+  transform: scale(1.2);
+}
+
+
+/***************** User Favorite Component ***********************/
+.editBtn {
+  background-color: var(--primary);
+  color: #fff;
+  text-shadow: var(--textshadow);
+}
+
+.editBtn:hover {
+  color: #fff;
+  box-shadow: var(--boxshadow);
+}
+
+.delete-btn {
+  transition: transform 0.2s ease-in-out;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
+  background-color: whitesmoke;
+}
+
+/* Define the animation */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.deleteColumn {
+  animation-name: fadeOut;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+}
+
+/* Apply the animation to the column when it is removed */
+.fade-out {
+  animation: fadeOut 0.5s ease-in-out;
+  opacity: 0;
+}
+
+/**************** Profile Editor  ***********************/
+.editorWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.editorContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: transparent;
+  padding: 30px;
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: var(--boxshadow);
+  text-align: center;
+}
+
+.editBtns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 5px;
+  min-height: 40vh;
+}
+
+.cancel {
+  color: red;
+  text-shadow: .1vw 0vw .10vw #e34949, .2vw 0vw .20vw #ea1a13;
+}
+
+
+/**************  LOGIN START   ********************/
+a {
+  color: #92badd;
+  display:inline-block;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+h2 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display:inline-block;
+  margin: 40px 8px 10px 8px;
+  color: #cccccc;
+}
+
+
+
+/* STRUCTURE */
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: transparent;
+  padding: 30px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: var(--boxshadow);
+  text-align: center;
+}
+
+#formFooter {
+  background-color: transparent;
+  border-top: 1px solid #dce8f1;
+  padding: 25px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+
+
+/* TABS */
+
+h2.inactive {
+  color: #cccccc;
+}
+
+h2.active {
+  color: #0d0d0d;
+  border-bottom: 2px solid #5fbae9;
+}
+
+
+
+
+/* FORM TYPOGRAPHY*/
+
+input[type=button], input[type=submit], input[type=reset]  {
+  background-color: #56baed;
+  border: none;
+  color: white;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+  background-color: #39ace7;
+}
+
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+input[type=email],[type=password], [type=name] {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+input[type=email]:focus {
+  background-color: #fff;
+  border-bottom: 2px solid #5fbae9;
+}
+
+input[type=password]:focus {
+  background-color: #fff;
+  border-bottom: 2px solid #5fbae9;
+}
+
+input[type=name]:focus {
+  background-color: #fff;
+  border-bottom: 2px solid #5fbae9;
+}
+
+input[type=text]:placeholder {
+  color: #cccccc;
+}
+
+
+
+/* ANIMATIONS */
+
+/* Simple CSS3 Fade-in-down Animation */
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+/* Simple CSS3 Fade-in Animation */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fadeIn {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.fadeIn.first {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.fadeIn.second {
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+  -webkit-animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+/* Simple CSS3 Fade-in Animation */
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #56baed;
+  content: "";
+  transition: width 0.2s;
+}
+
+.underlineHover:hover {
+  color: #0d0d0d;
+}
+
+.underlineHover:hover:after{
+  width: 100%;
+}
+
+
+
+/* OTHERS */
+
+*:focus {
+    outline: none;
+}
+
+#icon {
+  width:60%;
+}
+
+#formFooter p {
+  color: #17dcff;
+  text-shadow:
+  .1vw 0vw .25vw #1e91f0, .2vw 0vw .25vw #1e3df0;
+}
+/*    LOGIN END     */
+
+
+
+/*****************      Media queries     *****************/
+/* For the media queries we will try to follow the common break points for a responsize layout */
+/* Medium size Screens */
+/*  We will wrap the 1024px breakpoint into this one. What can I say
+      except I'm lazy and it works */
+@media screen and (max-width: 1280px) {
+  .fiveDayWrapper .card ul li:first-child {
+    font-size: 2rem;
+  }
+
+  .test {
+    width: 80%;
+  }
+  .currentWrapper {
+    max-height: fit-content;
+  }
+
+  .current {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: fit-content;
+  }
+
+  .data-list li {
+    font-size: 15px;
+  }
+
+  .currentBox,
+  .data-list,
+  .hourlyBox,
+  .hourly {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-bottom: 10px;
+  }
+
+
+  .stat-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: calc(100% / 2 - 2em);
+    max-width: 30%;
+  }
+
+  .neon-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-bottom: 10px;
+  }
+  .card,
+  .neon-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 40% !important;
+  }
+
+  .neon {
+    font-size: 20px;
+  }
+
+  .cust-btn {
+    font-size: 12px;
+  }
+
+}
+
+/* Tablets/Smaller Devices */
+@media screen and (max-width: 768px) {
+
+  .fiveDayWrapper .card ul li:first-child {
+    font-size: 1.7rem;
+  }
+
+  .currentWrapper {
+    padding: 5px;
+  }
+
+  .data-list li,
+  .data-list h2 {
+    font-size: 12px;
+  }
+
+  .data-list {
+    padding: 0px;
+    justify-content: center;
+  }
+
+  .hourlyBox {
+    width: 90%;
+  }
+
+  .stat-group {
+    margin: 0px 5px;
+  }
+
+  .neon-card {
+    min-width: 80%;
+    margin: 10px;
+  }
+
+  .currentBox {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+  }
+
+  .table-cell {
+    font-size: 12px;
+  }
+
+  .cust-btn {
+    font-size: 10px;
+  }
+
+  .card {
+    min-width: 70% !important;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .fiveDayWrapper .card ul li:first-child {
+    font-size: 1.5rem;
+  }
+  .fiveDayWrapper,
+  .currentWrapper {
+    width: 100%;
+    display: flex;
+    margin: 3px 0px;
+    padding: 5px;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .neon-row {
+    width: 100%;
+    padding: 0;
+    margin: 0 !important;
+  }
+  .neon {
+    font-size: 20px;
+  }
+
+  .neon-card {
+    max-height: fit-content;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .cities {
+    font-size: 10px;
+  }
+}

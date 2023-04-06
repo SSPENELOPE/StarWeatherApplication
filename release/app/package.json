@@ -1,0 +1,18 @@
+{
+  "name": "star-weather",
+  "version": "4.6.0",
+  "description": "Weather",
+  "license": "MIT",
+  "author": {
+    "name": "SSPENELOPE",
+    "email": "SSPENELOPE23@gmail.com",
+    "url": "https://github.com/starweather"
+  },
+  "main": "./dist/main/main.js",
+  "scripts": {
+    "rebuild": "node -r ts-node/register ../../.erb/scripts/electron-rebuild.js",
+    "postinstall": "npm run rebuild && npm run link-modules",
+    "link-modules": "node -r ts-node/register ../../.erb/scripts/link-modules.ts"
+  },
+  "dependencies": {}
+}
